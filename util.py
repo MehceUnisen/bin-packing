@@ -19,7 +19,7 @@ edge_color = 'black'
 alpha = 0.5
 
 # Time settings
-frametime = 0.02
+frametime = 0.001
 starttime = 1
 endtime = 10
 
@@ -42,10 +42,10 @@ def initialize_plot(C, rects = None, frame_time: float = 0.02, start_time: float
     
     # Used for showing custom rects when late initializing plot
     if rects == None:
-        all_rects = copy(C.unpacked_rects)
+        all_rects = C.unpacked_rects[:]
     else:
         all_rects = rects
-    max_width = sum([r[0] for r in rects]) + 1 + len(rects)#TODO: Find better way of doing this
+    max_width = sum([r[0] for r in all_rects]) + 1 + len(all_rects)#TODO: Find better way of doing this
 
 
 def plot_configuration(C, last_frame: bool):
