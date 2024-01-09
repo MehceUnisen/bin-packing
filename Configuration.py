@@ -5,7 +5,7 @@ from util import PointType, plot_configuration, initialize_plot
 class Configuration:
 
     # The amount to look in each direction when determining if a corner is concave
-    eps = 0.001
+    eps = 0.0001
 
     def __init__(self, size: tuple, unpacked_rects: list, packed_rects: list[Rect] = [], enable_plotting: bool = False) -> None:
         self.size = size
